@@ -1,0 +1,18 @@
+---
+driver_plugin: vagrant
+platforms:
+- name: centos
+  driver_config:
+    box: Berkshelf-CentOS-6.3-x86_64-minimal
+    box_url: https://dl.dropbox.com/u/31081437/Berkshelf-CentOS-6.3-x86_64-minimal.box
+    require_chef_omnibus: 11.4.4
+    customize:
+      cpus: 1
+      memory: 256
+    network:
+      - ["private_network", { ip: "10.0.2.15" }]
+suites:
+- name: default
+  run_list:
+    - recipe[leiningen]
+    - recipe[minitest-handler]
