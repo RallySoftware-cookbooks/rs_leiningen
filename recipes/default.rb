@@ -6,7 +6,7 @@
 
 include_recipe 'java'
 
-remote_file '/usr/local/bin/lein' do
+remote_file "#{node[:leiningen][:dir]}/lein" do
   source node[:leiningen][:install_script]
   owner node[:leiningen][:user]
   group node[:leiningen][:group]

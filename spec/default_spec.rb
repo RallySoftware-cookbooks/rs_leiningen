@@ -4,6 +4,7 @@ require 'chefspec'
 describe 'leiningen::default' do
   let (:user) { 'username' }
   let (:group) { 'groupname' }
+  let (:location) { '/opt/bin' }
 
   let(:chef_run) do
     ChefSpec::ChefRunner.new do |node|
@@ -12,17 +13,18 @@ describe 'leiningen::default' do
       node.set[:leiningen][:install_script] = "https://raw.github.com/technomancy/leiningen/#{node[:leiningen][:version]}/bin/lein"
       node.set[:leiningen][:user] = user
       node.set[:leiningen][:group] = group
+      node.set[:leiningen][:dir] = location
     end
   end
 
-  let(:lein_file) { '/usr/local/bin/lein' }
+  let(:lein_file) { "#{location}/lein" }
 
   before do
     chef_run.converge 'leiningen::default'
     @shell_file = chef_run.remote_file(lein_file)
   end
 
-  it 'creates leiningen file in /usr/local/bin' do
+  it 'creates leiningen file in correct location' do
     expect(chef_run).to create_remote_file lein_file
   end
 
