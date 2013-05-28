@@ -1,25 +1,35 @@
-require_relative 'spec_helper'
+# require_relative 'spec_helper'
+require 'chefspec'
 
 describe 'leiningen::default' do
-  let (:chef_run) { ChefSpec::ChefRunner.new.converge 'leiningen::default' }
+  let (:user) { 'username' }
+  let (:group) { 'groupname' }
+  let (:location) { '/opt/bin' }
+
+  let(:chef_run) do
+    ChefSpec::ChefRunner.new do |node|
+      node.automatic_attrs[:platform_family] = 'rhel'
+      node.set[:leiningen][:version] = '2.1.2'
+      node.set[:leiningen][:install_script] = "https://raw.github.com/technomancy/leiningen/#{node[:leiningen][:version]}/bin/lein"
+      node.set[:leiningen][:user] = user
+      node.set[:leiningen][:group] = group
+      node.set[:leiningen][:dir] = location
+    end
+  end
+
+  let(:lein_file) { "#{location}/lein" }
 
   before do
-    Fauxhai.mock(platform: 'centos', version: 6.3) do |node|
-      node[:leiningen] = {}
-      node[:leiningen][:version] = '2.1.2'
-      node[:leiningen][:install_script] = "https://raw.github.com/technomancy/leiningen/#{node[:leiningen][:version]}/bin/lein"
-    end
+    chef_run.converge 'leiningen::default'
     @shell_file = chef_run.remote_file(lein_file)
   end
 
-  let (:lein_file) { '/usr/local/bin/lein' }
-
-  it 'creates leiningen file in /usr/local/bin' do
+  it 'creates leiningen file in correct location' do
     expect(chef_run).to create_remote_file lein_file
   end
 
   it 'creates leiningen file with correct ownership' do
-    expect(@shell_file).to be_owned_by('root', 'root')
+    expect(@shell_file).to be_owned_by(user, group)
   end
 
   it 'creates leiningen file with correct permissions' do

@@ -1,13 +1,9 @@
 # leiningen cookbook
+Cookbook for installing leiningen (https://github.com/technomancy/leiningen).
 
-# Requirements
+# Dependencies
+This cookbook depends on the java cookbook (https://github.com/opscode-cookbooks/java).
 
-# Usage
-
-# Attributes
-
-# Recipes
-
-# Author
-
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+# License
+Copyright (c) Rally Software Development Corp. 2013
+Distributed under the MIT License.

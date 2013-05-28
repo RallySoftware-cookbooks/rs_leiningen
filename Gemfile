@@ -5,7 +5,7 @@ gem "strainer", "~>2.0.0"
 gem "foodcritic", "~> 2.1.0"
 gem "chef", "~> 11.4.0"
 gem "berkshelf", "~> 1.4.3"
-gem "chefspec", "~> 1.0.0"
+gem "chefspec", "~> 1"
 gem "jackchop", :git => "https://github.com/RallySoftware-cookbooks/jackchop"
 
 # Workaround for json dependency for chef and berkshelf.  Chef
