@@ -1,4 +1,4 @@
 require 'rake'
-require 'jackchop/rake_tasks'
+require 'cookbook/development/rake_tasks'
 
 task :default => 'test'

@@ -1,5 +1,4 @@
-# require_relative 'spec_helper'
-require 'chefspec'
+require_relative 'spec_helper'
 
 describe 'leiningen::default' do
   let (:user) { 'username' }
