@@ -9,6 +9,14 @@ platforms:
     customize:
       cpus: 1
       memory: 256
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode-ubuntu-12.04
+    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-12.04.box
+    require_chef_omnibus: 11.4.4
+    customize:
+      cpus: 1
+      memory: 256
 suites:
 - name: leiningen
   run_list:
