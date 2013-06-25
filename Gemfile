@@ -14,5 +14,8 @@ gem "cookbook-development", :git => "https://github.com/RallySoftware-cookbooks/
 gem "json", "1.7.7"
 
 
-gem 'test-kitchen', :git => 'https://github.com/RallySoftware-cookbooks/test-kitchen', :branch => 'KITCHEN-75'
-gem 'kitchen-vagrant', :group => :integration
+group :integration do
+  gem 'test-kitchen', :git => 'https://github.com/RallySoftware-cookbooks/test-kitchen', :branch => 'KITCHEN-75'
+  gem 'kitchen-vagrant'
+end
+
