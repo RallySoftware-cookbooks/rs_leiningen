@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
 gem "rake", "~> 10.0.4"
-gem "strainer", "~>2.1.0"
-gem "foodcritic", "~> 2.1.0"
-gem "chef", "~> 11.4.0"
-gem "berkshelf", "~> 1.4.3"
-gem "chefspec", "~> 1.2.0"
+
+gem "chef", "= 11.4.4"
+gem "berkshelf", "~> 2.0"
 gem "cookbook-development", :git => "https://github.com/RallySoftware-cookbooks/cookbook-development"
+
+gem "chefspec", "~> 1.3"
+gem "foodcritic", "~> 2.2"
 
 # Workaround for json dependency for chef and berkshelf.  Chef
 # wants <= 1.7.7 and berkshelf >= 1.5 but bundler tries to grab 1.8.0
@@ -15,7 +16,7 @@ gem "json", "1.7.7"
 
 
 group :integration do
-  gem 'test-kitchen', :git => 'https://github.com/RallySoftware-cookbooks/test-kitchen', :branch => 'KITCHEN-75'
+  gem 'test-kitchen', '1.0.0.beta.1'
   gem 'kitchen-vagrant'
 end
 
