@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/RallySoftware-cookbooks/leiningen.png?branch=master)](https://travis-ci.org/RallySoftware-cookbooks/leiningen)
-
 Description
 ===========
 Installs the leiningen script - 2.1.2 by default.
