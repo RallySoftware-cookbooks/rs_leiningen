@@ -1,19 +1,12 @@
-Description
-===========
+## Description
 Installs the leiningen script - 2.1.2 by default.
 
-Requirements
-============
+## Requirements
+### Platform
+* CentOS 6.4
+* Ubuntu 12.04
 
-Platform
---------
-Tested on CentOS 6.4 and Ubuntu 12.04.
-
-Other
------
-
-Attributes
-==========
+## Attributes
 See `attributes/default.rb` for default values
 
 * `node[:leiningen][:version]` - version of leiningen to install
@@ -23,16 +16,11 @@ See `attributes/default.rb` for default values
 * `node[:leiningen][:group]` - which group the directory should belong to
 * `node[:leiningen][:dir]` - where to place lein file
 
-Recipes
-=======
-
-default
--------
-
+## Recipes
+### default
 Installs the leiningen script.
 
-License
-=======
+## License
 Copyright (c) Rally Software Development Corp. 2013
 
 Distributed under the MIT License.
