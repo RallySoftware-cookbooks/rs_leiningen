@@ -11,4 +11,4 @@ recipe 'leiningen::default', 'Installs leiningen'
 supports 'ubuntu'
 supports 'centos'
 
-depends 'java', '~> 1.13.0'
+depends 'java'
