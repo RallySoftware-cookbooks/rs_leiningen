@@ -40,7 +40,7 @@ a.out
 *.com
 *.class
 *.dll
-*.exe
+*.exe`
 */rdoc/
 
 # Testing #
@@ -94,3 +94,6 @@ Vagrantfile
 # Travis #
 ##########
 .travis.yml
+
+vendor
+test/.chef
