@@ -95,5 +95,5 @@ Vagrantfile
 ##########
 .travis.yml
 
-vendor
+vendor/*
 test/.chef
