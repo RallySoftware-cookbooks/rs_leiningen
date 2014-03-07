@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-describe 'leiningen::default' do
+describe 'rs_leiningen::default' do
   let(:user) { 'username' }
   let(:group) { 'groupname' }
   let(:location) { '/opt/bin' }

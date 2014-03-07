@@ -4,7 +4,7 @@ platforms:
 - name: centos-6.4-x86_64
   driver_config:
     box: opscode-centos-6.4-x86_64
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.4_chef-provisionerless.box 
+    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.4_chef-provisionerless.box
     require_chef_omnibus: true
     customize:
       cpus: 1
@@ -12,7 +12,7 @@ platforms:
 - name: ubuntu-12.04
   driver_config:
     box: opscode-ubuntu-12.04
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box 
+    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box
     require_chef_omnibus: true
     customize:
       cpus: 1
@@ -20,4 +20,4 @@ platforms:
 suites:
 - name: leiningen
   run_list:
-    - recipe[leiningen]
+    - recipe[rs_leiningen]
