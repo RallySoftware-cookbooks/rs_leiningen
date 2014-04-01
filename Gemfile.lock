@@ -1,23 +1,26 @@
 GIT
   remote: https://github.com/RallySoftware-cookbooks/cookbook-development
-  revision: 16cd4208f90cc606bc404c0d6184b366890b766b
+  revision: 9c895703800cb2b396d61681a8657fcbe6b61954
   specs:
-    cookbook-development (0.0.15)
+    cookbook-development (0.0.16)
       berkshelf (= 3.0.0.beta7)
       bundler (~> 1.3)
       chef (~> 11.6)
-      chefspec (~> 3.0)
+      chefspec (~> 3.2.0)
       faraday (= 0.8.9)
       foodcritic (~> 3.0)
+      kitchen-docker-api (~> 0.1)
       kitchen-vagrant (~> 0.11)
       rake (~> 10.0)
       test-kitchen
+      thor-scmversion (~> 1.4)
       version (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.5)
+    addressable (2.3.6)
+    archive-tar-minitar (0.5.2)
     berkshelf (3.0.0.beta7)
       addressable (~> 2.3.4)
       berkshelf-api-client (~> 1.1)
@@ -78,7 +81,12 @@ GEM
       rspec (~> 2.14)
     coderay (1.1.0)
     diff-lcs (1.2.5)
+    docker-api (1.9.1)
+      archive-tar-minitar
+      excon (>= 0.28)
+      json
     erubis (2.7.0)
+    excon (0.32.1)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
     fauxhai (2.1.0)
@@ -98,6 +106,9 @@ GEM
     i18n (0.6.9)
     ipaddress (0.8.0)
     json (1.8.1)
+    kitchen-docker-api (0.3.0)
+      docker-api (~> 1.9.0)
+      test-kitchen (>= 1.0.0)
     kitchen-vagrant (0.14.0)
       test-kitchen (~> 1.0)
     method_source (0.8.2)
@@ -110,7 +121,7 @@ GEM
     mixlib-log (1.6.0)
     mixlib-shellout (1.3.0)
     moneta (0.6.0)
-    multi_json (1.9.0)
+    multi_json (1.9.2)
     multipart-post (1.2.0)
     net-http-persistent (2.9.4)
     net-scp (1.1.2)
@@ -141,7 +152,7 @@ GEM
     puma (1.6.3)
       rack (~> 1.2)
     rack (1.5.2)
-    rake (10.1.1)
+    rake (10.2.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     retryable (1.3.5)
@@ -171,10 +182,10 @@ GEM
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.6)
     safe_yaml (1.0.1)
-    sawyer (0.5.3)
+    sawyer (0.5.4)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
-    slop (3.4.7)
+    slop (3.5.0)
     solve (0.8.2)
     systemu (2.5.2)
     test-kitchen (1.2.1)
@@ -184,6 +195,8 @@ GEM
       safe_yaml (~> 1.0)
       thor (~> 0.18)
     thor (0.18.1)
+    thor-scmversion (1.4.0)
+      thor
     timers (1.1.0)
     treetop (1.4.15)
       polyglot
