@@ -25,7 +25,7 @@
 #
 
 remote_file "#{node[:leiningen][:dir]}/lein" do
-  source node[:leiningen][:install_script]
+  source RSLeiningen.build_install_script(node)
   owner node[:leiningen][:user]
   group node[:leiningen][:group]
   mode 0755
