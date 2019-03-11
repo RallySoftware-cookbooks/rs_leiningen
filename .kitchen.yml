@@ -1,23 +1,37 @@
 ---
-driver_plugin: vagrant
-platforms:
-- name: centos-6.4-x86_64
-  driver_config:
-    box: opscode-centos-6.4-x86_64
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.4_chef-provisionerless.box
-    require_chef_omnibus: true
-    customize:
-      cpus: 1
-      memory: 256
-- name: ubuntu-12.04
-  driver_config:
-    box: opscode-ubuntu-12.04
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box
-    require_chef_omnibus: true
-    customize:
-      cpus: 1
-      memory: 256
 suites:
 - name: leiningen
   run_list:
     - recipe[rs_leiningen]
+driver:
+  name: gce
+  project: saas-rally-dev
+  zone: us-west1-a
+  network: gwdev-vpc
+  subnet: ops-tools
+  use_private_ip: true
+  metadata:
+    team: "ops"
+    purpose: "chef test kitchen"
+    name: "rs-splunk-test-kitchen"
+    ssh-keys: test-kitchen:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOoR08eNpZwJVq1Xi0qmSRYCSWoWyE809gGybkqy6OsVtcjrCMcr5fkjoyggN9657JcL+B04gOx9jqX83hS6eUuCcdITZQp1gXcNG6PyLKnYBteZ4eY/fhNh7FPlJoxCpub2C7ggQZq5xpRk8XsXS8/QpRsrz3TYmCLdcXOvlWKtkLT0mEV5J/hFIDqPoZQeMZmDLkF8X70ORgC7ocoJPIO87VelRg9E3b9974GabpqPX9LR92xkvVBIMHNadO4SWWEY+qH1c68BKe7/0BaqHQy1glIhVtHNLSoeYeKjBMQbLzsEGsvc7pZRHqqypkcIpT5IrcxNDwG1kjC1lCKN3P
+  tags:
+    - ssh
+    - everything-out
+  service_account_scopes:
+    - devstorage.read_write
+    - userinfo.email
+
+transport:
+  username: test-kitchen
+  ssh_key: ~/secrets/id_rsa
+
+platforms:
+  - name: centos-7
+    driver:
+      image_project: centos-cloud
+      image_family: centos-7
+  - name: centos-6
+    driver:
+      image_project: centos-cloud
+      image_family: centos-6
