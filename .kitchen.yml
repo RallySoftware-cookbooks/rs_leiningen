@@ -13,7 +13,7 @@ driver:
   metadata:
     team: "ops"
     purpose: "chef test kitchen"
-    name: "rs-splunk-test-kitchen"
+    name: "rs-leiningen-test-kitchen"
     ssh-keys: test-kitchen:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOoR08eNpZwJVq1Xi0qmSRYCSWoWyE809gGybkqy6OsVtcjrCMcr5fkjoyggN9657JcL+B04gOx9jqX83hS6eUuCcdITZQp1gXcNG6PyLKnYBteZ4eY/fhNh7FPlJoxCpub2C7ggQZq5xpRk8XsXS8/QpRsrz3TYmCLdcXOvlWKtkLT0mEV5J/hFIDqPoZQeMZmDLkF8X70ORgC7ocoJPIO87VelRg9E3b9974GabpqPX9LR92xkvVBIMHNadO4SWWEY+qH1c68BKe7/0BaqHQy1glIhVtHNLSoeYeKjBMQbLzsEGsvc7pZRHqqypkcIpT5IrcxNDwG1kjC1lCKN3P
   tags:
     - ssh
